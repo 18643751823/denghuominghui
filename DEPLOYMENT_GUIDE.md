@@ -1,0 +1,53 @@
+# 键盘鼠标计数工具 - 部署指南
+
+本指南将引导您如何在另一台计算机上部署和运行“键盘鼠标计数工具”。
+
+## 先决条件
+
+1.  **Python 环境**: 确保目标计算机已安装 Python (建议版本 3.8 或更高版本)。您可以从 [Python 官方网站](https://www.python.org/downloads/) 下载并安装。
+    在安装过程中，请确保勾选 “Add Python to PATH” 选项。
+
+## 部署步骤
+
+1.  **获取项目文件**: 将整个项目文件夹（`键盘鼠标计数工具（开发版）`）复制到目标计算机。
+
+2.  **打开命令行/终端**: 在目标计算机上打开命令行工具（例如 Windows 上的 `cmd` 或 `PowerShell`，macOS/Linux 上的 `Terminal`）。
+
+3.  **导航到项目目录**: 使用 `cd` 命令进入项目根目录。
+    ```bash
+    cd path\to\键盘鼠标计数工具（开发版）
+    ```
+    (请将 `path\to\` 替换为实际的项目路径)
+
+4.  **（可选但推荐）创建虚拟环境**: 为了隔离项目依赖，建议创建一个虚拟环境。
+    ```bash
+    python -m venv .venv
+    ```
+    激活虚拟环境：
+    *   Windows:
+        ```bash
+        .venv\Scripts\activate
+        ```
+    *   macOS/Linux:
+        ```bash
+        source .venv/bin/activate
+        ```
+
+5.  **安装依赖**: 在项目根目录（或激活的虚拟环境中）运行以下命令，安装所需的库：
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+6.  **运行应用程序**: 使用以下命令启动应用程序：
+    ```bash
+    python src/main.py
+    ```
+
+## 数据库
+
+*   应用程序将在首次运行时自动在 `src/data/` 目录下创建 `usage_stats.db` 数据库文件，用于存储使用数据。
+
+## 注意事项
+
+*   确保目标计算机满足 `requirements.txt` 文件中列出的所有依赖项的要求。
+*   如果遇到权限问题，请尝试使用管理员权限运行命令行/终端。
